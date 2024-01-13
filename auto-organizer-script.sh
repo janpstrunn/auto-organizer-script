@@ -31,3 +31,5 @@ find "$source_dir" -type f -exec bash -c '
         *) mv "$0" "$destination_dir/Others/" ;;
     esac
 ' {} \;
+
+echo "Complete!"
