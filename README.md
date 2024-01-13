@@ -14,4 +14,4 @@ This scripts doesn't require to give the desired source and destination director
 
 ## auto-organizer-ui.sh (EXPERIMENTAL)
 
-This script is a UI version that allows you to choose the desired directories graphically. Still requires you to edit the script to better adapt to your preferences.
+This script is a UI version, using **Zenity**, that allows you to choose the desired directories graphically. Still requires you to edit the script to better adapt to your preferences.
