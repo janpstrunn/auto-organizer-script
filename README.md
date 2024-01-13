@@ -11,3 +11,7 @@ This scripts allows you to give the desired source and destination directories o
 ## auto-organizer.sh
 
 This scripts doesn't require to give the desired source and destination directories on script run, but it need to be configured before using, by simply editing the script.
+
+## auto-organizer-ui.sh (EXPERIMENTAL)
+
+This script is a UI version that allows you to choose the desired directories graphically.
