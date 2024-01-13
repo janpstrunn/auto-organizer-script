@@ -1,31 +1,31 @@
 #!/bin/bash
 
-source_dir="$1"
-dst_dir="$2"
+source="$1"
+destiny="$2"
 
-[[ -d "$dst_dir/Media/Images" ]] || mkdir -p "$dst_dir/Media/Images"
-[[ -d "$dst_dir/Documents" ]] || mkdir -p "$dst_dir/Documents"
-[[ -d "$dst_dir/Others" ]] || mkdir -p "$dst_dir/Others"
-[[ -d "$dst_dir/Media/Videos" ]] || mkdir -p "$dst_dir/Media/Videos"
-[[ -d "$dst_dir/Media/Gifs" ]] || mkdir -p "$dst_dir/Media/Gifs"
-[[ -d "$dst_dir/Applications" ]] || mkdir -p "$dst_dir/Applications"
-[[ -d "$dst_dir/Torrents" ]] || mkdir -p "$dst_dir/Torrents"
-[[ -d "$dst_dir/Media/Music" ]] || mkdir -p "$dst_dir/Media/Music"
-[[ -d "$dst_dir/Documents/Text" ]] || mkdir -p "$dst_dir/Documents/Text"
+[[ -d "$destiny/Media/Images" ]] || mkdir -p "$destiny/Media/Images"
+[[ -d "$destiny/Documents" ]] || mkdir -p "$destiny/Documents"
+[[ -d "$destiny/Others" ]] || mkdir -p "$destiny/Others"
+[[ -d "$destiny/Media/Videos" ]] || mkdir -p "$destiny/Media/Videos"
+[[ -d "$destiny/Media/Gifs" ]] || mkdir -p "$destiny/Media/Gifs"
+[[ -d "$destiny/Applications" ]] || mkdir -p "$destiny/Applications"
+[[ -d "$destiny/Torrents" ]] || mkdir -p "$destiny/Torrents"
+[[ -d "$destiny/Media/Music" ]] || mkdir -p "$destiny/Media/Music"
+[[ -d "$destiny/Documents/Text" ]] || mkdir -p "$destiny/Documents/Text"
 
-find "$source_dir" -type f -exec bash -c '
-    dst_dir="$1"
+find "$source" -type f -exec bash -c '
+    destiny="$1"
     case "$0" in
-        *.jpg|*.png|*.webp|*.jpeg|*.bmp|*.tiff|*.svg|*.raw|*.jpeg) mv "$0" "$dst_dir/Media/Images/" ;;
-        *.gif) mv "$0" "$dst_dir/Media/Gifs/" ;;
-        *.AppImage|*.exe|*.sh|*.dmg|*.deb|*.rpm|*.msi|*.pkg|*.zip|*.tar|*.tar.gz|*.tar.bz2) mv "$0" "$dst_dir/Applications/" ;;
-        *.torrent) mv "$0" "$dst_dir/Torrents/" ;;
-        *.text|*.md|*.html) mv "$0" "$dst_dir/Documents/Text/" ;;
-        *.pdf|*.doc|*.docx|*.odt|*.epub|*.rtf) mv "$0" "$dst_dir/Documents/" ;;
-        *.mp4|*.mov|*.mkv|*.avi|*.mpeg) mv "$0" "$dst_dir/Media/Videos/" ;;
-        *.mp3|*.ogg|*.aac|*.wav|*.flac|*.ape|*.aiff|*.pcm|*.opus) mv "$0" "$dst_dir/Media/Music/" ;;
-        *) mv "$0" "$dst_dir/Others/" ;;
+        *.jpg|*.png|*.webp|*.jpeg|*.bmp|*.tiff|*.svg|*.raw|*.jpeg) mv "$0" "$destiny/Media/Images/" ;;
+        *.gif) mv "$0" "$destiny/Media/Gifs/" ;;
+        *.AppImage|*.exe|*.sh|*.dmg|*.deb|*.rpm|*.msi|*.pkg|*.zip|*.tar|*.tar.gz|*.tar.bz2) mv "$0" "$destiny/Applications/" ;;
+        *.torrent) mv "$0" "$destiny/Torrents/" ;;
+        *.text|*.md|*.html) mv "$0" "$destiny/Documents/Text/" ;;
+        *.pdf|*.doc|*.docx|*.odt|*.epub|*.rtf) mv "$0" "$destiny/Documents/" ;;
+        *.mp4|*.mov|*.mkv|*.avi|*.mpeg) mv "$0" "$destiny/Media/Videos/" ;;
+        *.mp3|*.ogg|*.aac|*.wav|*.flac|*.ape|*.aiff|*.pcm|*.opus) mv "$0" "$destiny/Media/Music/" ;;
+        *) mv "$0" "$destiny/Others/" ;;
     esac
-' {} "$dst_dir" \;
+' {} "$destiny" \;
 
 echo "Complete!"
