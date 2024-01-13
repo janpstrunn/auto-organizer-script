@@ -14,7 +14,7 @@ destination_dir="/path/to/folder"
 [[ -d "$destination_dir/Documents/Text" ]] || mkdir -p "$destination_dir/Documents/Text"
 
 find "$source_dir" -type f -exec bash -c '
-    destination_dir="$HOME/Downloads/Cavalo"
+    destination_dir="$path/to/folder"
     case "$0" in
         *.jpg|*.png|*.webp|*.jpeg|*.bmp|*.tiff|*.svg|*.raw|*.jpeg) mv "$0" "$destination_dir/Media/Images/" ;;
         *.gif) mv "$0" "$destination_dir/Media/Gifs/" ;;
